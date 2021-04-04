@@ -1,5 +1,8 @@
 import stations from "../models/stations.js";
 import conectionn from "../models/connections.js";
+import connectionType from "../models/connectiontype.js";
+import currrentType from "../models/currenttypes.js";
+import levelType from "../models/levels.js";
 
 const rectangleBounds = (topRight, bottomLeft) => ({
   type: "Polygon",
@@ -42,13 +45,13 @@ export default {
       });
     },
     connectiontypes: (parent, args) => {
-      return stations.find().limit(10);
+      return connectionType.find().limit(10);
     },
     currenttypes: (parent, args) => {
-      return stations.find().limit(10);
+      return currrentType.find().limit(10);
     },
     leveltypes: (parent, args) => {
-      return stations.find().limit(10);
+      return levelType.find().limit(10);
     },
   },
   Mutation: {
