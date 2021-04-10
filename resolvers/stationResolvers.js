@@ -3,6 +3,8 @@ import conectionn from "../models/connections.js";
 import connectionType from "../models/connectiontype.js";
 import currrentType from "../models/currenttypes.js";
 import levelType from "../models/levels.js";
+import pkg from "apollo-server-express";
+const { AuthenticationError } = pkg;
 
 const rectangleBounds = (topRight, bottomLeft) => ({
   type: "Polygon",
@@ -58,6 +60,9 @@ export default {
     addStation: async (parent, args) => {
       console.log(args);
       try {
+        if (!user) {
+          return new AuthenticationError("You are not authenticated!");
+        }
         const connection = await Promise.all(
           args.Connections.map(async (con) => {
             let newconn = new conectionn(con);

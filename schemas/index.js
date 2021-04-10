@@ -4,6 +4,7 @@ import connectionschema from "./connectionsSchema.js";
 import connectionstypeschema from "./ConnectiontypeSchema.js";
 import currenttypeschema from "./CurrenttypeSchema.js";
 import leveltypeschema from "./LeveltypeSchema.js";
+import userschema from "./userSchema.js";
 const { gql } = pkg;
 
 const linkShema = gql`
@@ -22,4 +23,5 @@ export default [
   connectionstypeschema,
   currenttypeschema,
   leveltypeschema,
+  userschema,
 ];

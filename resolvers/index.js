@@ -3,6 +3,7 @@ import connectionResolver from "./connectionResolver.js";
 import connectiontypeResolver from "./connectiontypeResolver.js";
 import currenttypeResolver from "./currenttypeResolver.js";
 import leveltypeResolver from "./leveltypeResolver.js";
+import userREsolver from "./userResolver.js";
 
 export default [
   stationResolvers,
@@ -10,4 +11,5 @@ export default [
   connectiontypeResolver,
   currenttypeResolver,
   leveltypeResolver,
+  userREsolver,
 ];
