@@ -83,6 +83,10 @@ export default {
     },
     modifyStation: async (parent, args) => {
       try {
+        if (!user) {
+          return new AuthenticationError("You are not authenticated!");
+        }
+
         if (args.Connections) {
           const conn = await Promise.all(
             args.Connections.map(async (con) => {
@@ -111,6 +115,10 @@ export default {
 
     deleteStation: async (parent, args) => {
       try {
+        if (!user) {
+          return new AuthenticationError("You are not authenticated!");
+        }
+
         console.log(args.id);
         return await stations.findOneAndDelete({ _id: args.id });
       } catch (e) {
