@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,node,webstorm
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,node,webstorm
 
+.pem
+.csr
 ### macOS ###
 # General
 .DS_Store
